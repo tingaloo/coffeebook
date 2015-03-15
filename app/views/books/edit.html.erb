@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="large 8 columns">
+    <h1> Edit Book </h1>
+
+    <%= simple_form_for :book, multipart: true, url: book_path(@book), method: :patch do |f| %>
+      <%= f.input :title, label: 'Book Title' %>
+      <%= f.input :author %>
+      <%= f.input :description, placeholder: 'Your Interpretation' %>
+      <%= f.input :favorite_character %>
+      <%= f.input :favorite_quotes %>
+      <%= f.button :submit, :class => "round button" %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<%= simple_form_for :book, multipart: true, url: books_path do |f| %>
+  <%= f.input :title, label: 'Book Title' %>
+  <%= f.input :author %>
+  <%= f.input :description, placeholder: 'Your Interpretation' %>
+  <%= f.input :favorite_character %>
+  <%= f.input :favorite_quotes,
+  placeholder: "Format quotes like this '<quote>' - <character>" %>
+  <%= f.button :submit, :class => "round button" %>
+<% end %>

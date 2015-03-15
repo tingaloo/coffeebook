@@ -1,0 +1,32 @@
+
+<div class="row">
+  <div class="large-12 columns">
+    <h1> The Library </h1>
+    <br>
+      <% @books.each do |book| %>
+        <div class ="large-4 columns">
+          <h1><%= book.title %> </h1>
+          <p> <%= book.author %> </p>
+
+          <p> <%= book.description %> </p>
+
+          <p> <i><%= book.favorite_quotes %></i> </p>
+
+
+
+          <%= link_to "Show", book_path(book), :class => "round button" %>
+          <%= link_to "Edit", edit_book_path(book), :class => "round button" %>
+          <%= link_to "Burn", book_path(book),
+            method: :delete, :class => "round button",
+            data: {confirm: "Burning is easier than writing"} %>
+        </div>
+      <% end %>
+
+
+
+
+
+
+  </div>
+</div>
+

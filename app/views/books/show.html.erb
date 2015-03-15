@@ -1,0 +1,31 @@
+
+
+
+<!-- request token template not working properly -->
+
+<div class="row text center">
+  <div class="large-8 columns">
+
+    <!-- client.user_id requires Oauth -->
+
+    <h1> <%= @book.title %> </h1>
+    <h2> <%= @goodreadsbook.author %> </h2>
+
+    <h3> Synopsis </h3>
+    <p> <%= @goodreadsbook.description.html_safe %> </p>
+
+    <h3> Interpretation </h3>
+    <p> <%= @book.description %> </p>
+
+    <p> <i><%= @book.favorite_quotes %></i> </p>
+
+    <h3> Favorite Character </h3>
+    <p> <%= @book.favorite_character %> </p>
+    <br><br>
+    <%= link_to "Edit", edit_book_path(@book), :class => "round button" %>
+    <%= link_to "Burn", book_path(@book),
+      method: :delete, :class => "round button",
+      data: {confirm: "Burning is easier than writing"} %>
+    <%= link_to "Library", root_path, :class => "round button" %>
+  </div>
+</div>
